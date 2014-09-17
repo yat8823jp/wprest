@@ -24,19 +24,6 @@ get_header(); ?>
 
 			?>
 			
-			<script>
-				// $(document).ready(function(){
-				$.get("http://www.city.osaka.lg.jp/contents/wdu090/opendata/mapnavoskdat_csv/mapnavoskdat_gakkou.csv",function(data)){
-					var csv = $.scv()(data);
-					$(csv).each(function(){
-						if(this[0] && this[1] && this[2] && this[3]){
-							$("#csv").append("<tr><td>"+this[0]+"</td><td>"+this[1]+"</td><td>"+this[2]+"</td><td>"+this[3]+"</td></tr>");
-						}
-					})
-				}
-				// })
-			</script>
-
 			<table id="csv"></table>
 
 			<?php

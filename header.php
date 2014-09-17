@@ -28,6 +28,22 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+
+			<script type="text/javascript">
+				jQuery(function($){
+					var url = 'http://www.city.osaka.lg.jp/contents/wdu090/opendata/mapnavoskdat_csv/mapnavoskdat_gakkou.csv?callback=?';
+				
+					$.getJSON(url,{id:'アイコン番'},function(data){
+						var csv = $.csv()(data);
+						$(csv).each(function(){
+							if(this[0] && this[1] && this[2] && this[3]){
+								$("#csv").append("<tr><td>"+this[0]+"</td><td>"+this[1]+"</td><td>"+this[2]+"</td><td>"+this[3]+"</td></tr>");
+							}
+						})
+					})
+				})
+			</script>
+
 </head>
 
 <body <?php body_class(); ?>>
