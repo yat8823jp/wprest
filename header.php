@@ -32,12 +32,14 @@
 			<script type="text/javascript">
 				jQuery(function($){
 					var url = 'http://www.city.osaka.lg.jp/contents/wdu090/opendata/mapnavoskdat_csv/mapnavoskdat_gakkou.csv?callback=?';
-				
-					$.getJSON(url,{id:'アイコン番'},function(data){
+
+					$.getJSON(url,function(data){
 						var csv = $.csv()(data);
+						csv = csv.replace('¥n','¥¥n');
+						csv = csv.replace('¥r','¥¥r');
 						$(csv).each(function(){
-							if(this[0] && this[1] && this[2] && this[3]){
-								$("#csv").append("<tr><td>"+this[0]+"</td><td>"+this[1]+"</td><td>"+this[2]+"</td><td>"+this[3]+"</td></tr>");
+							if(this[0] && this[1] && this[2] && this[3] && this[4]){
+								$("#csv").append("<tr><td>"+this[0]+"</td><td>"+this[1]+"</td><td>"+this[2]+"</td><td>"+this[3]+"</td></tr>"+this[4]+"</td></tr>");
 							}
 						})
 					})

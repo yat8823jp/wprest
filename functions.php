@@ -513,9 +513,9 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 
 function add_script(){
 	if (!is_admin()) {
-		wp_enqueue_script('leaflet.label',get_bloginfo('stylesheet_directory').'/leaflet.label/js/leaflet.label.js',array('jquery'),'0.1.0',true);
-		wp_enqueue_script('app',get_bloginfo('stylesheet_directory').'/leaflet.label/js/app.js',array('jquery'),'0.1.0',true);
-		wp_enqueue_script('app',get_bloginfo('stylesheet_directory').'/leaflet.label/config.js',array('jquery'),'0.1.0',true);
+		// wp_enqueue_script('leaflet.label',get_bloginfo('stylesheet_directory').'/leaflet.label/js/leaflet.label.js',array('jquery'),'0.1.0',true);
+		// wp_enqueue_script('app',get_bloginfo('stylesheet_directory').'/leaflet.label/js/app.js',array('jquery'),'0.1.0',true);
+		// wp_enqueue_script('app',get_bloginfo('stylesheet_directory').'/leaflet.label/config.js',array('jquery'),'0.1.0',true);
 		wp_enqueue_script('csv.js',get_bloginfo('stylesheet_directory').'/js/jquery.csv.js',array('jquery'),'0.1.0',true);
 	}
 }
